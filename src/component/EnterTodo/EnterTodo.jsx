@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addTodo } from '../../store/todo/todoSlice';
