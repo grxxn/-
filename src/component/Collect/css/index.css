@@ -1,0 +1,8 @@
+.collect-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.trashIcon {
+  display: inline-block;
+}

@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #363636;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  background-color: #fba05e;
+  /* 스크롤 방지 */
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+}
+a {
+  text-decoration: none;
+}
+input:focus {
+  outline: none;
+}
+li {
+  list-style-type: none;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mainContainer {
+  z-index: 1;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 30px 25px;
+  box-shadow: 0px 0px 10px 1px rgba(87,87,87,0.7);
+  background-color: #fafafa;
+}
+.mainTitle {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 25px;
+}
+.enBtn {
+  padding: 5px 10px;
+  background-color: #ffffff00;
+  border: 1px solid #666666;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.enBtn:hover {
+  background-color: #fcaa6f;
+  border-color: #fcaa6f;
+  color: #ffffff;
+}
+.enterName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.enterName>p {
+  margin-bottom: 50px;
+}
+.enterName>input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 1px solid #9b9b9b;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.enterName>input[type="submit"]:hover {
+  background-color: #fcaa6f;
+  color: #ffffff;
+  border: 1px solid #fcaa6f;
+}
+.nameInput {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #9b9b9b;
+  background-color: #ffffff00;
+  margin-bottom: 20px;
+  padding: 5px;
+  text-align: center;
+}
+.nameInput:focus{
+  outline: none;
+}
+/* todo */
+.closeBtn, .modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 28px;
+  cursor: pointer;
+}
+.closeBtn>div, .modal-close-btn>span {
+  position: absolute;
+  border: 1px solid black;
+  background-color: #000;
+  width: 1px;
+  height: 22px;
+}
+.closeBtn>div:first-child, .modal-close-btn>span:first-child {
+  transform: rotate(45deg);
+}
+.closeBtn>div:last-child, .modal-close-btn>span:last-child {
+  transform: rotate(-45deg);
+}
+.clearBtn {
+  padding: 5px 15px;
+  background-color: transparent;
+  border: solid 1px #9b9b9b;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.nextBtn {
+  padding: 5px 9px;
+  background-color: transparent;
+  border: 1px solid #9b9b9b;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.nextBtn:hover {
+  background-color: #fcaa6f;
+  border-color: #fcaa6f;
+  color: #ffffff;
+}
+/* Collect */
+.collectTitle {
+  margin-bottom: 20px;
+}
+.randomBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  background-color: #f1904b56;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 14px 0;
+}
+.bannerTitle {
+  color: #fd9348e3;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.randomBanner>p {
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 0 20px;
+  white-space: pre-wrap;
+  font-size: 13px;
+}
+.bannerBtn {
+  width: 150px;
+  padding: 3px 0;
+  background-color: transparent;
+  border: 1px solid #353535;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.bannerBtn:hover {
+  background-color: #fba05e;
+  border-color: #fba05e;
+  color: #fff;
+}
+.chkContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.today {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #363636;
+  padding: 10px 20px;
+}
+.today>h4 {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.todayLi {
+  margin-bottom: 30px;
+  width: 50%;
+}
+.todayLi>li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.todayLi>li:last-child {
+  margin-bottom: 0;
+}
+.todayLi>li.active {
+  text-decoration: line-through;
+  color: #888;
+}
+.checkBox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #363636;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.chkIcon {
+  opacity: 0;
+  position: absolute;
+  top: -11px;
+  left: -3px;
+  width: 30px;
+  height: 35px;
+  font-size: 26px;
+}
+.chkIcon.on {
+  opacity: 1;
+}
+.trashIcon {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+.addBtn {
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 1px solid #777777;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addBtn:hover{
+  background-color: #fcaa6f;
+  color: #ffffff;
+  border-color: #fcaa6f;
+}
+.add-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 400px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 30px 40px;
+  border: 1px solid #666;
+  background-color: #f5f5f5;
+}
+.add-modal.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-modal p {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.add-modal input[type="button"] {
+  background-color: #ffffff;
+  border: 1px solid #666666;
+  border-radius: 6px;
+  padding: 5px 14px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.add-modal-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #666666;
+  background-color: transparent;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* mobile version */
+@media screen and (max-width: 767px){
+  .mainContainer {
+    padding: 0;
+    width: 68%;
+  }
+  .mainTitle {
+    font-size: 30px;
+  }
+  .enBtn {
+    font-size: 11px;
+  }
+  /* en */
+  .enterName>p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .enterName>input[type="submit"] {
+    font-size: 11px;
+  }
+  /* todo */
+  .nextBtn {
+    font-size: 11px;
+  }
+  /* collect */
+  .collectTitle {
+    font-size: 19px;
+    margin-bottom: 40px;
+  }
+  .randomBanner {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .randomBanner>p {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+  .bannerBtn {
+    font-size: 9px;
+  }
+  .chkContainer {
+    width: 80%;
+  }
+  .today>h4 {
+    font-size: 15px;
+  }
+  .todayLi {
+    width: 80%;
+  }
+  .todayLi>li {
+    font-size: 14px;
+  }
+  .chkIcon {
+    width: 25px;
+    height: 30px;
+    top: -8px;
+    left: 0;
+  }
+  .addBtn {
+    font-size: 11px;
+  }
+  .lastAddInput {
+    font-size: 12px;
+  }
+  .add-modal>button {
+    font-size: 11px;
+  }
+}
