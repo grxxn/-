@@ -1,4 +1,4 @@
-# 오늘의 목표 
+# 오늘의 목표📝
 
 ## 📌 Link
 [클릭시 페이지로 이동합니다.](https://grxxn.github.io/todo-list/)
